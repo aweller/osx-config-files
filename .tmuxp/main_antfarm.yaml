@@ -1,0 +1,34 @@
+session_name: main_antfarm
+windows:
+  - window_name: bandit
+    layout: even-horizontal
+    shell_command_before:
+      - wd bandit
+      - workon bandit362
+    panes:
+      - shell_command:           # pane no. 1
+          - clear
+
+  - window_name: afstrat
+    layout: even-horizontal
+    shell_command_before:
+      - wd strategies
+      - workon antfarm-strategies34
+    panes:
+      - shell_command:           # pane no. 1
+          - clear
+
+  - window_name: afstrat execution
+    layout: even-horizontal
+    shell_command_before:
+      - wd strategies
+      - workon antfarm-strategies34
+    panes:
+      - shell_command:           # pane no. 1
+          - clear
+
+  - window_name: zsh
+    layout: even-horizontal
+    panes:
+      - shell_command:           # pane no. 1
+          - clear
