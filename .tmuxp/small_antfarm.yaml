@@ -1,0 +1,51 @@
+session_name: small_antfarm
+windows:
+- window_name: bandit server
+  layout: even-horizontal
+  shell_command_before:
+    - wd bandit
+  panes:
+    - shell_command:           # pane no. 1
+      - workon bandit362
+      - export REMOTE_USER=aweller
+      - python manage.py runserver --settings bandit.settings.dev
+    - shell_command:           # pane no. 2
+      - cd ..
+      - npm start
+
+- window_name: notebooks
+  layout: even-horizontal
+  panes:
+    - shell_command:           # pane no. 1
+      - wd bandit-notebooks
+      - workon bandit362
+      - python ../bandit/manage.py shell_plus --notebook --settings bandit.settings.dev
+
+    - shell_command:           # pane no. 2
+      - wd afstrat-notebooks
+      - workon antfarm-strategies34
+      - jupyter notebook
+
+- window_name: bandit-unittests
+  layout: even-horizontal
+  panes:
+    - shell_command:           # pane no. 1
+        - wd bandit
+        - workon bandit362
+        - clear
+
+- window_name: afstrat-unittests
+  layout: even-horizontal
+  panes:
+    - shell_command:           # pane no. 1
+        - wd strategies
+        - workon antfarm-strategies34
+        - clear
+
+- window_name: afstrat execution
+  layout: even-horizontal
+  shell_command_before:
+    - wd strategies
+    - workon antfarm-strategies34
+  panes:
+    - clear

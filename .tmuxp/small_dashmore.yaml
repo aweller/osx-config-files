@@ -1,0 +1,44 @@
+session_name: small_dashmore
+windows:
+
+- window_name: dashmore server
+  layout: even-horizontal
+  shell_command_before:
+    - wd dash
+  panes:
+    - shell_command:           # pane no. 1
+      - export REMOTE_USER=aweller
+      - workon dashmore34
+      - python manage.py runserver --settings dashmore.settings.dev
+    - shell_command:           # pane no. 2
+      - npm start
+
+- window_name: notebooks
+  layout: even-horizontal
+  panes:
+    - shell_command:           # pane no. 1
+      - wd dashmore-notebooks
+      - workon dashmore34
+      - python ../manage.py shell_plus --notebook --settings dashmore.settings.dev
+
+    - shell_command:           # pane no. 2
+      - wd fireant-notebooks
+      - workon fireant34
+      - jupyter notebook
+
+
+- window_name: dashmore-unittests
+  layout: even-horizontal
+  panes:
+    - shell_command:           # pane no. 1
+        - wd dash
+        - workon dashmore34
+        - clear
+
+  - window_name: fireant-unittests
+    layout: even-horizontal
+    panes:
+      - shell_command:           # pane no. 1
+          - wd fireant
+          - workon fireant34
+          - clear

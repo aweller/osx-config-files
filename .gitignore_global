@@ -1,0 +1,8 @@
+settings_local_dev.py
+dataframes/
+.DS_store
+.idea
+notebooks/
+aweller.py
+build-number.txt
+*.ipynb

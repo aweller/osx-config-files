@@ -1,0 +1,15 @@
+start:~/work/react_playground/strategies
+strat:~/work/react_playground/strategies
+bandit:~/work/bandit/bandit/bandit
+notebook:~/work/bandit/bandit/notebooks
+dump:~/work/mysql_dump
+web:~/work/bandit/bandit/web
+strategies:~/work/antfarm-strategies
+notes:~/work/notes
+bandit-notebooks:~/work/bandit/bandit/notebooks
+afstrat-notebooks:~/work/antfarm-strategies/notebooks
+dash:~/work/dashmore
+dashmore-notebooks:~/work/dashmore/notebooks
+fireant:~/work/fireant
+fireant-notebooks:~/work/fireant/notebooks
+py:~/work/pypika
